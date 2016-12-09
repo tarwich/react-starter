@@ -1,0 +1,22 @@
+{
+  "name": "react-starter",
+  "version": "0.1.0",
+  "description": "A starter setup for a React project",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "react",
+    "starter",
+    "webpack",
+    "sass"
+  ],
+  "author": "Samuel Dillow",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "0.0.2",
+    "eslint": "^3.11.1",
+    "eslint-config-tarwich": "tarwich/eslint-config-tarwich#v1.5.0",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

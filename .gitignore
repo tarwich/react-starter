@@ -1,0 +1,12 @@
+# ----------[ Application Stuff ]----------------------------------------
+*.log
+node_modules
+
+# ----------[ Metadata ]----------------------------------------
+
+# macOS
+.DS_Store
+# VS Code IDE
+.vscode
+# Webstorm
+.idea
