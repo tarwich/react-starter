@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "jsx":                          "react",
+    "moduleResolution":             "node",
+    "outDir":                       "tmp",
+    "target":                       "es6",
+    "typeRoots":                    ["./types"],
+    "types":                        ["node"]
+  },
+  "files":   [
+    "web/src/index.tsx",
+    "types/index.d.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "node_modules"
+  ]
+}

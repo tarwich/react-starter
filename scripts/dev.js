@@ -2,12 +2,14 @@
 
 // Libraries
 const api              = require('../api');
-const config           = require('config').loadConfig('../');
 const log              = require('log')('dev.js');
 const spawn            = require('child_process').spawn;
 const webpack          = require('webpack');
 const webpackConfig    = require('../webpack.config.js');
 const WebpackDevServer = require('webpack-dev-server');
+
+// Load the configuration
+const config = require('../config.json');
 
 // Add webpack dev server to config
 webpackConfig.entry.app.push(...[

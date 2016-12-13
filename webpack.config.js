@@ -6,7 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack           = require('webpack');
 const bourbon           = require('bourbon');
 
-const config = require('config.json');
+const config = require('./config.json');
 
 if (!((config || {}).build || {}).path) {
   console.error('You must specify a config.build.path in config.json');
@@ -15,7 +15,10 @@ if (!((config || {}).build || {}).path) {
 
 module.exports = {
   entry: {
-    app: 'index',
+    app:[
+      './web/src/index.tsx'
+    ]
+    
   },
   module: {
     loaders: [
@@ -58,8 +61,8 @@ module.exports = {
     extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
     // This is how webpack should search for files
     root:       [
-      path.resolve('.', 'web', 'src'),
-      path.resolve('.', 'web', 'static'),
+      'web/src',
+      'web',
     ],
   },
   // Options for the SCSS parser

@@ -1,5 +1,8 @@
 {
   "build": {
     "path": "build"
+  },
+  "server": {
+    "port": 8080
   }
 }

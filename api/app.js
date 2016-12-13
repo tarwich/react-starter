@@ -2,10 +2,11 @@
 
 // Libraries
 const express = require('express');
+const foo = require('./foo');
 // Variables
 const app = express();
 
 // Import the routes
-app.use(require('foo').routes);
+app.use(foo.routes);
 
 module.exports = app;
