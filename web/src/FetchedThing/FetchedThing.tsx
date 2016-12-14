@@ -20,9 +20,12 @@ export class FetchedThing extends React.Component<IProperties, IState> {
   
   componentDidMount() {
     fetch('api/foo')
-    .then(result => {
-      console.log('result', result);
-      console.log('body', result.body);
+    .then(response => response.text())
+    .then(text => {
+      this.setState({
+        loading: false,
+        value: text,
+      });
     });
   }
   

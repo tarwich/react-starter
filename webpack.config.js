@@ -16,10 +16,12 @@ if (!((config || {}).build || {}).path) {
 module.exports = {
   entry: {
     app:[
-      './web/src/index.tsx'
+      'webpack-hot-middleware/client',
+      './web/src/index.tsx',
     ]
     
   },
+  publicPath: 'http://' + config.server.address + ':' + config.server.port,
   module: {
     loaders: [
       // Copy the index.html straight to the output folder
@@ -43,6 +45,7 @@ module.exports = {
     // devtool:       'cheap-module-eval-source-map',
     filename:      '[name].js',
     path:          path.resolve('.', config.build.path),
+    publicPath:    'http://' + config.server.address + ':' + config.server.port,
   },
   plugins: [
     // Automatically move everything in node_modules out of app.js into vendor.js
@@ -53,6 +56,10 @@ module.exports = {
     }),
     // Separate CSS files instead of adding the CSS to the bundle
     new ExtractTextPlugin('[name].css'),
+    // Make HMR work with webpack-dev-middleware
+    new webpack.HotModuleReplacementPlugin(),
+    // Don't fire success events upon compilation errors
+    new webpack.NoErrorsPlugin(),
   ],
   // Tell Webpack how to load files
   resolve: {

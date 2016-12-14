@@ -7,6 +7,6 @@ const foo = require('./foo');
 const app = express();
 
 // Import the routes
-app.use(foo.routes);
+app.use('/api', foo.routes);
 
 module.exports = app;

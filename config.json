@@ -3,6 +3,7 @@
     "path": "build"
   },
   "server": {
+    "address": "sulpher-kettledrum.gomix.me",
     "port": 8080
   }
 }
